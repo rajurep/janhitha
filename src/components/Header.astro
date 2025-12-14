@@ -1,11 +1,22 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+import { Image } from 'astro:assets';
 import { SITE_TITLE } from '../consts';
+import logoImage from '../assets/logo.png';
 ---
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<h2><a href="/" class="flex items-center gap-2">
+      <Image 
+        src={logoImage} 
+        alt="Janhitha Logo" 
+        width={180} 
+        height={40} 
+        loading="eager" 
+        class="w-auto h-8 md:h-10" 
+      />
+    </a></h2>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
